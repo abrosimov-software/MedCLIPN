@@ -24,8 +24,10 @@ temperature: 0.07
 loss_mode: "L2"
 
 # Data configuration
-train_csv: "/repo/MEDCLIPN/data/ROCOv2_dataset/metadata/train_captions.csv"
-train_img_dir: "/repo/MEDCLIPN/data/ROCOv2_dataset/images/train"
+dataset_name: "axiong/pmc_oa"
+dataset_config: "pmc_oa"
+dataset_split: "train"
+streaming: false
 num_workers: 1
 
 # Logging and checkpointing
