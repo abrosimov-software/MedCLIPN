@@ -1,0 +1,41 @@
+# CLIPN Medical Domain Training Configuration
+# Improved version of notebook setup with best practices
+
+# Basic training parameters
+epochs: 1
+batch_size: 32
+learning_rate: 0.0001
+weight_decay: 0.01
+
+# Advanced training settings
+gradient_accumulation_steps: 8
+warmup_steps: 100
+scheduler_type: "cosine"
+max_grad_norm: 1.0
+
+# Model configuration
+model_name: "hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+transformer_path: "text.transformer.encoder"
+num_no_texts: 16
+frozen_visual: false
+
+# Loss configuration
+temperature: 0.07
+loss_mode: "L2"
+
+# Data configuration
+dataset_name: "axiong/pmc_oa"
+dataset_config: "pmc_oa"
+dataset_split: "train"
+streaming: false
+num_workers: 1
+
+# Logging and checkpointing
+log_interval: 10
+save_interval: 300
+checkpoint_dir: "checkpoints"
+log_dir: "logs"
+
+# Device configuration
+device: "cuda"
+mixed_precision: true
